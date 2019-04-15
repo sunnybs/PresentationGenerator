@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Drawing;
+using System.DrawingCore;
 
 namespace Presentation_Generator.Controllers.Fonts
 {
