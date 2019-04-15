@@ -72,7 +72,7 @@ namespace Presentation_Generator.Controllers
             ViewBag.presDir = GetServerPath("Presentations/" + name);
             ViewBag.SlideId = id;
             ViewBag.SlideName = name;
-            ViewBag.SlidePath = slides[id];
+            //ViewBag.SlidePath = slides[id];
             ViewBag.NextSlide = "~/Home/Slide/" + (id + 1).ToString() + "/" + name;
             ViewBag.PreviousSlide = "~/Home/Slide/" + (id - 1).ToString() + "/" + name;
             ViewBag.DownloadLink = "~/Presentations/" + name + "/Slides.zip";
@@ -208,7 +208,7 @@ namespace Presentation_Generator.Controllers
             var jsonFormatter = new DataContractJsonSerializer(typeof(Slide));
             for (var i = 0; i<slides.Count;i++)
             {
-                SlideSaver.SaveSlideAsJpeg(slides[i], presentationDir + "/Slides/" + i.ToString() + ".jpg");
+                //SlideSaver.SaveSlideAsJpeg(slides[i], presentationDir + "/Slides/" + i.ToString() + ".jpg");
                 using (var fs = new FileStream(presentationDir + "/SlidesJSON/" + i.ToString() + ".json", FileMode.OpenOrCreate))
                 {
                     jsonFormatter.WriteObject(fs, slides[i]);
